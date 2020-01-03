@@ -7,11 +7,11 @@ class Display {
     }
     
     formatOrder(){
-        
+        return `Cappuccino ${this.order[0]} x $${this.order[1]}\nTax: $${this.order[2]}\nTotal: $${this.order[3]}`
     }
 
     formatBill() {
-        return this.name + "\n\n" + this.address + "\nPhone: +" + this.phone + "\n"+ this.order + "\nThank you!"
+        return `${this.name}\n\n${this.address}\nPhone: +${this.phone}\n${this.order}\nThank you!`
     }
 
     showBill() {

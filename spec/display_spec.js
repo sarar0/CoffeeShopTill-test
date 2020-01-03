@@ -14,4 +14,12 @@ describe ("Display bill", function(){
             expect(display.showBill()).toEqual("The Coffee Connection\n\n123 Lakeside Way\nPhone: +16503600708\nCappuccino 1 x 3.85\nTax: $2.87\nTotal: $6.72\nThank you!")
         })
     }) 
+
+    describe("#formatOrder", function(){
+        it("should return the formatted order with tax and total", function(){
+            let order = [1, 3.85, 2.87, 6.72]
+            let display = new Display(order)
+            expect(display.formatOrder()).toEqual("Cappuccino 1 x $3.85\nTax: $2.87\nTotal: $6.72")
+        })
+    })
 })
