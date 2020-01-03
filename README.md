@@ -1,4 +1,4 @@
-## Gilded Rose test
+## Coffee Shop till test
 
 #### Design approach: 
 
