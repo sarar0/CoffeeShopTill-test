@@ -1,17 +1,23 @@
 class Display {
     constructor(order){
        this.order = order;
-       this.name = "The Coffee Connection"
-       this.address = "123 Lakeside Way"
-       this.phone = "16503600708"
+       this.name = order.shopInfo.shopName;
+       this.address = order.shopInfo.address;
+       this.phone = order.shopInfo.phone;
     }
     
     formatOrder(){
-        return `${this.order[0]} ${this.order[1]} x $${this.order[2]}\nTax: $${this.order[3]}\nTotal: $${this.order[4]}`
+        this.order.exportFullBill()
+        var formattedList = ""
+        const entries = Object.entries(this.order.orderList)
+        for (const [item, quantity] of entries) {
+            formattedList = formattedList.concat(`${item} ${quantity} x $${this.order.shopInfo.prices[0][item]}\n`)
+        }
+        return formattedList;
     }
 
     formatBill() {
-        return `${this.name}\n\n${this.address}\nPhone: +${this.phone}\n${this.formatOrder()}\nThank you!`
+        return `${this.name}\n\n${this.address}\nPhone: +${this.phone}\n${this.formatOrder()}\nTax: $${this.order.tax}\nTotal: $${this.order.total}\nThank you!`
     }
 
     showBill() {

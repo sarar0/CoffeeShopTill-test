@@ -16,10 +16,50 @@ describe ("Order", function(){
     }) 
 
     describe("#getPrice", function(){
-        it("should return the unitary price for the item", function(){
+        it("should return the unitary price for the item Tea", function(){
             let order = new Order()
-            order.getPrice("Cappuccino", 1)
+            expect(order.getPrice("Tea")).toEqual(3.65)
+        })
+
+        it("should return the unitary price for the item Cappuccino", function(){
+            let order = new Order()
             expect(order.getPrice("Cappuccino")).toEqual(3.85)
+        })
+    }) 
+
+    describe("#calculateSubtotal", function(){
+        it("should calculate subtotal when order is only 1 Cappuccino", function(){
+            let order = new Order()
+            order.addItem("Cappuccino", 1)
+            expect(order.calculateSubtotal()).toEqual(3.85)
+        })
+
+        it("should calculate subtotal when order is 1 Cappuccino and 3 teas", function(){
+            let order = new Order()
+            order.addItem("Cappuccino", 1)
+            order.addItem("Tea", 3)
+            expect(order.calculateSubtotal()).toEqual(14.80)
+        })
+    }) 
+
+    describe("#calculateTotal", function(){
+        it("should calculate subtotal and tax when order is only 1 Cappuccino", function(){
+            let order = new Order()
+            order.addItem("Cappuccino", 1)
+            order.calculateTotal()
+            expect(order.subtotal).toEqual(3.85)
+            expect(order.tax).toEqual(0.33)
+            expect(order.total).toEqual(4.18)
+        })
+
+        it("should calculate subtotal and tax when order is 1 Cappuccino and 3 teas", function(){
+            let order = new Order()
+            order.addItem("Cappuccino", 1)
+            order.addItem("Tea", 3)
+            order.calculateTotal()
+            expect(order.subtotal).toEqual(14.80)
+            expect(order.tax).toEqual(1.28)
+            expect(order.total).toEqual(16.08)
         })
     }) 
 
