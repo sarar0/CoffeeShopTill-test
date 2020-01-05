@@ -28,7 +28,6 @@ class Order {
         this.subtotal = 0
         this.tax = 0;
         this.total = 0;
-        this.fullBill = {}
         this.taxPercentage = 8.64/100;
     }
 
@@ -51,19 +50,6 @@ class Order {
     calculateTotal() {
         this.tax = Math.round((this.calculateSubtotal()* this.taxPercentage) * 100)/100 ;
         this.total = Math.round((this.subtotal + this.tax) * 100)/100 ;     
-    }
-
-    exportFullBill() {
-        this.calculateTotal() 
-
-        this.fullBill = { 
-            "orderList": this.orderList, 
-            "subtotal": this.subtotal,
-            "tax": this.tax,
-            "total": this.total
-        }
-
-        return this.fullBill
     }
  
 }

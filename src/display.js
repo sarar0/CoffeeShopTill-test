@@ -7,7 +7,6 @@ class Display {
     }
     
     formatOrder(){
-        this.order.exportFullBill()
         var formattedList = ""
         const entries = Object.entries(this.order.orderList)
         for (const [item, quantity] of entries) {
@@ -16,11 +15,9 @@ class Display {
         return formattedList;
     }
 
-    formatBill() {
-        return `${this.name}\n\n${this.address}\nPhone: +${this.phone}\n${this.formatOrder()}\nTax: $${this.order.tax}\nTotal: $${this.order.total}\nThank you!`
+    issueBill() {
+        this.order.calculateTotal()
+        return `${this.name}\n\n${this.address}\nPhone: +${this.phone}\n.\n${this.formatOrder()}\nTax: $${this.order.tax}\nTotal: $${this.order.total}\nThank you!`
     }
 
-    showBill() {
-        return this.formatBill()
-    }
 }
