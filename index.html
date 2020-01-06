@@ -3,22 +3,25 @@
 <head>
   <meta charset="utf-8">
 
-
   <!-- include source files here... -->
   <script src="src/order.js"></script>
   <script src="src/display.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="hipstercoffee.json"></script>
 
 </head>
 
 <body>
-  <script>
-    let orderOne = new Order;
-    orderOne.addItem("Tea", 1)
-    orderOne.addItem("Cafe Latte", 4)
-    let displayOne = new Display(orderOne);
-    document.body.innerHTML = displayOne.issueBill()
-  </script>
+  <div>
+    <br>
+    <script>
+      let orderOne = new Order;
+      orderOne.addItem("Tea", 1)
+      orderOne.addItem("Cafe Latte", 4)
+      orderOne.addItem("Cappuccino", 4)
+      let displayOne = new Display(orderOne);
+      document.body.innerHTML = displayOne.issueBill()
+    </script>
+    <br>
+  </div>
 </body>
 </html>
