@@ -1,16 +1,16 @@
 class Display {
     constructor(order){
        this.order = order;
-       this.name = order.shopInfo.shopName;
-       this.address = order.shopInfo.address;
-       this.phone = order.shopInfo.phone;
+       this.name = order.getShopInfo().shopName;
+       this.address = order.getShopInfo().address;
+       this.phone = order.getShopInfo().phone;
     }
     
     formatOrder(){
         var formattedList = ""
         const entries = Object.entries(this.order.orderList)
         for (const [item, quantity] of entries) {
-            formattedList = formattedList.concat(`${item} ${quantity} x $${this.order.shopInfo.prices[0][item]}<br>`)
+            formattedList = formattedList.concat(`${item} ${quantity} x $${this.order.getShopInfo().prices[0][item]}<br>`)
         }
         return formattedList;
     }
