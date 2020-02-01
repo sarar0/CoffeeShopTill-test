@@ -6,10 +6,9 @@ $(document).ready(function(){
     let orderOne = new Order;
     // orderOne.addItem("Tea", 1)
     // orderOne.addItem("Cafe Latte", 4)
-    orderOne.addItem("Cappuccino", 4)
+    // orderOne.addItem("Cappuccino", 4)
     let displayOne = new Display(orderOne);
-    // document.body.innerHTML = displayOne.issueBill()
 
-    $('#display_bill').text(displayOne.issueBill())
+    $('#display_bill').html(displayOne.issueBill())
 
 })
