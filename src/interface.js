@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $( function() {
       $( "#menu_item" ).selectmenu();
-    })
+    });
 
     let orderOne = new Order;
     // orderOne.addItem("Tea", 1)
