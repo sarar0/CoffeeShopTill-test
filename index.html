@@ -2,25 +2,47 @@
 <html>
 <head>
   <meta charset="utf-8">
-
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- include source files here... -->
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="src/order.js"></script>
   <script src="src/display.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-
+  <script src="src/interface.js"></script>
 </head>
 
 <body>
   <div>
+    <h2>Place your order here</h2>
+    <form action="#">
+      <fieldset>
+        <label for="menu_item">Please select item</label>
+        <select name="menu_item" id="menu_item">
+          <option>Cafe Latte</option>
+          <option>Flat White</option>
+          <option>Cappuccino</option>
+          <option>Single Espresso</option>
+          <option>Double Espresso</option>
+          <option>Americano</option>
+          <option>Cortado</option>
+          <option>Tea</option>
+          <option>Choc Mudcake</option>
+          <option>Choc Mousse</option>
+          <option>Affogato</option>
+          <option>Tiramisu</option>
+          <option>Blueberry Muffin</option>
+          <option>Chocolate Chip Muffin</option>
+          <option>Muffin Of The Day</option>
+        </select>
+    </fieldset>   
+  </form>
+  </div>
+  <div>
     <br>
-    <script>
-      let orderOne = new Order;
-      orderOne.addItem("Tea", 1)
-      orderOne.addItem("Cafe Latte", 4)
-      orderOne.addItem("Cappuccino", 4)
-      let displayOne = new Display(orderOne);
-      document.body.innerHTML = displayOne.issueBill()
-    </script>
+      <h2>Your bill</h2>
+      <div id="display_bill">
+
+      </div>
     <br>
   </div>
 </body>
