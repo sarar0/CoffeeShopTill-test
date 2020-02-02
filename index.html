@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- include source files here... -->
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <script src="src/order.js"></script>
   <script src="src/display.js"></script>
   <script src="src/interface.js"></script>
@@ -17,7 +19,8 @@
     -------------
     <form action="#"><fieldset>
         <label for="menu_item">Place your order by selecting items from the menu</label>
-        <select name="menu_item" id="menu_item">
+        <br>Menu: 
+        <select class="btn btn-secondary dropdown-toggle" name="menu_item" id="menu_item">
           <option>Cafe Latte</option>
           <option>Flat White</option>
           <option>Cappuccino</option>
@@ -35,12 +38,12 @@
           <option>Muffin Of The Day</option>
         </select>
     </fieldset>
-    How many?
     <br>
+    How many?
     <input id="quantity" type="number"></input> 
     <br>
     <br>
-    <button id="button1">Add item</button>  
+    <button id="button1" class="btn btn-primary">Add item</button>  
     <br>
     -------------
     <h4>Your order</h4>
@@ -48,7 +51,7 @@
 
     </div>
     <br>
-    <button id="button2">Calculate bill</button>  
+    <button id="button2" class="btn btn-primary">Calculate bill</button>  
   </form>
   </div>
   <div>
@@ -58,7 +61,7 @@
 
       </div>
     <br>
-    <button id="reload">Start another order</button>
+    <button id="reload" class="btn btn-success">Start another order</button>
   </div>
   <br>
 </body>

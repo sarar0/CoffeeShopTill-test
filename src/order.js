@@ -38,7 +38,7 @@ class Order {
     }
 
     addItem(item, quantity) {
-        if (this.orderList[item] == undefined) {
+        if (this.orderList[item] == undefined ) {
             this.orderList[item] = quantity
         }
         else {
