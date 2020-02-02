@@ -4,3 +4,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     display:block;
 }
+
+fieldset {
+    border: 0;
+}
+
+label {
+    display: block;
+    margin: 30px 0 0 0;
+}
