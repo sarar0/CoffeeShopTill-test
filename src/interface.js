@@ -13,6 +13,12 @@ $(document).ready(function(){
     $('#button2').click(function( event ) {
         event.preventDefault();
         $('#display_bill').html(displayOne.issueBill())
+        $(this).attr("disabled", "disabled");
+        $('#button1').attr("disabled","disabled");
     })
+
+    $('#reload').click(function() {
+        location.reload();
+    });
     
 })
