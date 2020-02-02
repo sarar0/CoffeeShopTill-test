@@ -38,7 +38,12 @@ class Order {
     }
 
     addItem(item, quantity) {
-        this.orderList[item] = quantity
+        if (this.orderList[item] == undefined) {
+            this.orderList[item] = quantity
+        }
+        else {
+        this.orderList[item] += quantity
+        }
     }
 
     getPrice(item) {
