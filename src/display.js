@@ -10,7 +10,7 @@ class Display {
         var formattedList = ""
         const entries = Object.entries(this.order.orderList)
         for (const [item, quantity] of entries) {
-            formattedList = formattedList.concat(`${item} ${quantity} x $${this.order.getShopInfo().prices[0][item]}<br>`)
+            formattedList = formattedList.concat(`${item} ${quantity} x $${this.order.getPrice(item)}<br>`)
         }
         return formattedList;
     }

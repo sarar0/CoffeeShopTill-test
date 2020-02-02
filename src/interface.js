@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#button1').click(function( event ) {
         event.preventDefault();
         var item = $("#menu_item").val();
-        var quantity = $("#quantity").val();
+        var quantity = parseInt($("#quantity").val());
         orderOne.addItem(item, quantity)
         $('#order_list').html(displayOne.formatOrder())
     });
