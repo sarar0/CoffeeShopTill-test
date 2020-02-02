@@ -5,7 +5,8 @@ $(document).ready(function(){
     $('#button1').click(function( event ) {
         event.preventDefault();
         var item = $("#menu_item").val();
-        orderOne.addItem(item, 1)
+        var quantity = $("#quantity").val();
+        orderOne.addItem(item, quantity)
         $('#order_list').html(displayOne.formatOrder())
     });
     
@@ -13,4 +14,5 @@ $(document).ready(function(){
         event.preventDefault();
         $('#display_bill').html(displayOne.issueBill())
     })
+    
 })
