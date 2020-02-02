@@ -1,6 +1,11 @@
 describe ("Order", function(){
-    
+    let order;
+
     describe("#addItem", function(){
+        beforeEach(function() {
+            order = new Order()
+        });
+
         it("should add an item and quantity to the order", function(){
             let order = new Order()
             order.addItem("Cappuccino", 1)
@@ -12,6 +17,13 @@ describe ("Order", function(){
             order.addItem("Cappuccino", 3)
             order.addItem("Cafe Latte", 2)
             expect(Object.keys(order.orderList).length).toEqual(2)
+        })
+
+        it("updates quantity when same item is added twice", function(){
+            let order = new Order()
+            order.addItem("Cappuccino", 3)
+            order.addItem("Cappuccino", 3)
+            expect(order.orderList["Cappuccino"]).toEqual(6)
         })
     }) 
 

@@ -3,7 +3,7 @@ describe ("Display bill", function(){
     var display;
     
         it("check that order.issueBill() has been called", function(){
-            let order = jasmine.createSpyObj('order', ['getShopInfo', 'calculateTotal', 'orderList']);
+            let order = jasmine.createSpyObj('order', ['getShopInfo', 'getPrice', 'calculateTotal', 'orderList']);
             order.getShopInfo.and.callFake(function() {
                 return {
                     "shopName": "",
